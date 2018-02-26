@@ -1,0 +1,247 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+VBWPFMVVMPractice
+</name>
+</assembly>
+<members>
+<member name="T:VBWPFMVVMPractice.My.MyWpfExtension">
+ <summary>
+ Module used to define the properties that are available in the My Namespace for WPF
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:VBWPFMVVMPractice.My.MyWpfExtension.Application">
+ <summary>
+ Returns the application object for the running application
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.My.MyWpfExtension.Computer">
+ <summary>
+ Returns information about the host computer.
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.My.MyWpfExtension.User">
+ <summary>
+ Returns information for the current user.  If you wish to run the application with the current 
+ Windows user credentials, call My.User.InitializeWithWindowsUser().
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.My.MyWpfExtension.Log">
+ <summary>
+ Returns the application log. The listeners can be configured by the application's configuration file.
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.My.MyWpfExtension.Windows">
+ <summary>
+ Returns the collection of Windows defined in the project.
+ </summary>
+</member>
+<member name="T:VBWPFMVVMPractice.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:VBWPFMVVMPractice.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:VBWPFMVVMPractice.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:VBWPFMVVMPractice.RelayCommand.#ctor(System.Action{System.Object})">
+ <summary>
+ Creates a new command that can always execute.
+ </summary>
+ <param name="execute">The execution logic</param>
+</member>
+<member name="M:VBWPFMVVMPractice.RelayCommand.#ctor(System.Action{System.Object},System.Predicate{System.Object})">
+ <summary>
+ Creates a new command.
+ </summary>
+ <param name="execute">The execution logic</param>
+ <param name="canExecute">The execution status logic</param>
+</member>
+<member name="P:VBWPFMVVMPractice.TicTacToeViewModel.Cells">
+ <summary>
+ The readonly Cells property returns a collection of cells of the current game.
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.TicTacToeViewModel.ChangeDimensionCommand">
+ <summary>
+ The ChangeDimensionCommand represents a request to change the dimension of the game.
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.TicTacToeViewModel.CurrentPlayerName">
+ <summary>
+ The CurrentPlayerName property gets and sets the name of the current player.
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.TicTacToeViewModel.Dimension">
+ <summary>
+ The Dimension property gets and sets the dimension of the game.
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.TicTacToeViewModel.MoveCommand">
+ <summary>
+ The MoveCommand represents a request to move on a given cell.
+ </summary>
+</member>
+<member name="M:VBWPFMVVMPractice.TicTacToeViewModel.NewGame">
+ <summary>
+ The NewGame method starts a new game.
+ </summary>
+</member>
+<member name="M:VBWPFMVVMPractice.TicTacToeViewModel.CanMove(System.Int32)">
+ <summary>
+ The CanMove method determines whether a player can move on the specified cell.
+ </summary>
+ <param name="cellNumber">The number of the cell</param>
+ <returns>If true, can move; otherwise, can't move</returns>
+</member>
+<member name="M:VBWPFMVVMPractice.TicTacToeViewModel.Move(System.Int32)">
+ <summary>
+ The Move method sets a PlayerMove object for the current player on the specified Cell object. 
+ </summary>
+ <param name="cellNumber">The number of the cell</param>
+</member>
+<member name="M:VBWPFMVVMPractice.TicTacToeViewModel.HasWon(System.String)">
+ <summary>
+ The HasWon method checks whether the given player has won.
+ </summary>
+ <param name="player">The name of the player</param>
+ <returns></returns>
+</member>
+<member name="M:VBWPFMVVMPractice.TicTacToeViewModel.TieGame">
+ <summary>
+ The TieGame method checks if the game is tie.
+ </summary>
+</member>
+<member name="M:VBWPFMVVMPractice.TicTacToeViewModel.Notify(System.String)">
+ <summary>
+ The Notify method is used to raise a PropertyChanged event when a property value is 
+ changed
+ </summary>
+ <param name="propName">The name of the property whose value is changed.</param>
+</member>
+<member name="M:VBWPFMVVMPractice.TicTacToeViewModel.RaiseGameOverEvent(VBWPFMVVMPractice.TicTacToeViewModel.GameOverEventArgs)">
+ <summary>
+ The RaiseGameOverEvent method raise the GameOverEvent
+ </summary>
+ <param name="e">A GameOverEventArgs object</param>
+</member>
+<member name="T:VBWPFMVVMPractice.Application">
+<summary>
+Application
+</summary>
+</member>
+<member name="M:VBWPFMVVMPractice.Application.Main">
+<summary>
+Application Entry Point.
+</summary>
+</member>
+<member name="M:VBWPFMVVMPractice.ChangeDimensionBehavior.OnPropertyChangedCallBack(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+ <summary>
+  Attached property Dimension's PropertyChangeCallback method.
+ In this method, get the MenuItem the attached property is set on and subscribe the Click
+ on the MenuItem.
+ </summary>
+</member>
+<member name="M:VBWPFMVVMPractice.ShutdownBehavior.mnu_Click(System.Object,System.Windows.RoutedEventArgs)">
+ <summary>
+ MenuItem's Click event handler
+ </summary>
+</member>
+<member name="M:VBWPFMVVMPractice.ShutdownBehavior.OnPropertyChangedCallBack(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+ <summary>
+ The ForceShutdown property's PropertyChangedCallback method.
+ In this method, get the MenuItem the attached property is set on and subscribe to the
+ Click event of the MenuItem.
+ </summary>
+</member>
+<member name="T:VBWPFMVVMPractice.MainWindow">
+<summary>
+MainWindow
+</summary>
+</member>
+<member name="M:VBWPFMVVMPractice.MainWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="P:VBWPFMVVMPractice.Cell.CellNumber">
+ <summary>
+ Return the number of the cell.
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.Cell.Move">
+ <summary>
+ Represents a player's move on the cell.
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.PlayerMove.IsPartOfWin">
+ <summary>
+ Get and set whether the move is part of all the moves of the winner.
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.PlayerMove.MoveNumber">
+ <summary>
+ Get and set the number of this move of the player.
+ </summary>
+</member>
+<member name="P:VBWPFMVVMPractice.PlayerMove.PlayerName">
+ <summary>
+ Get and set the player's name.
+ </summary>
+</member>
+<member name="M:VBWPFMVVMPractice.GameOverBehavior.OnReportResultPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+ <summary>
+ The ReportResultProperty's PropertyChangedCallback method.
+ In the method, get the TicTacToeViewModel instance and subscribe to its GameOverEvent.
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:VBWPFMVVMPractice.GameOverBehavior.GameOverBehavior_GameOverEvent(System.Object,VBWPFMVVMPractice.TicTacToeViewModel.GameOverEventArgs)">
+ <summary>
+ In the GameOver event handler, show the result of the current game via a MessageBox.
+ </summary>
+</member>
+<member name="T:VBWPFMVVMPractice.XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+<summary>
+GeneratedInternalTypeHelper
+</summary>
+</member>
+<member name="M:VBWPFMVVMPractice.XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+<summary>
+CreateInstance
+</summary>
+</member>
+<member name="M:VBWPFMVVMPractice.XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+<summary>
+GetPropertyValue
+</summary>
+</member>
+<member name="M:VBWPFMVVMPractice.XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+<summary>
+SetPropertyValue
+</summary>
+</member>
+<member name="M:VBWPFMVVMPractice.XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+<summary>
+CreateDelegate
+</summary>
+</member>
+<member name="M:VBWPFMVVMPractice.XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+<summary>
+AddEventHandler
+</summary>
+</member>
+</members>
+</doc>
